@@ -3,19 +3,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const tabsContainer = document.querySelectorAll('[data-tab-id]');
 
     for (let i= 0; i < buttons.length; i++) {
-        buttons[i].addEventListener('click', function(botao) {
-            const abaAlvo = botao.target.dataset.tabButton;
-            const aba = document.querySelector(`[data-tab-id=${abaAlvo}]`);
-            escondeTodasAbas();
+        buttons[i].addEventListener('click', function(button) {
+            const targetTab = button.target.dataset.tabButton;
+            const aba = document.querySelector(`[data-tab-id=${targetTab}]`);
+            hideAllTabs();
             aba.classList.add('shows__list--is-active')
-            removeBotaoAtivo();
-            botao.target.classList.add('shows__tabs__button--is-active');
+            activeButton();
+            button.target.classList.add('shows__tabs__button--is-active');
 
         })
     }
 })
 
-function removeBotaoAtivo() {
+function activeButton() {
     const buttons = document.querySelectorAll('[data-tab-button]');
 
     for (let i= 0; i < buttons.length; i++) {
@@ -23,7 +23,7 @@ function removeBotaoAtivo() {
     }
 }
 
-function escondeTodasAbas() {
+function hideAllTabs() {
     const tabsContainer = document.querySelectorAll('[data-tab-id]');
 
     for (let i = 0; i < tabsContainer.length; i++) {
