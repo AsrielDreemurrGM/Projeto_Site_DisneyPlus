@@ -9,7 +9,6 @@
     &__questions {
         &__item {
             background-color: #13151d;
-            list-style: none;
             margin-bottom: 16px;
 
             &__question {
@@ -38,9 +37,9 @@
                 padding: 0 24px;
                 transition: height, .5s ease;
 
-                ul {
+                ul > * {
                     list-style: disc;
-                    padding-left: 40px;
+                    margin-left: 40px;
                     margin-top: 16px;
 
                     li {
