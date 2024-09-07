@@ -4,20 +4,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const questions = document.querySelectorAll('[data-faq-question]');
 
     const heroSection = document.querySelector('.hero');
-    const alturaHero = heroSection.clientHeight;
+    const heroHeight = heroSection.clientHeight;
 
-    // Controla o Display do Cabeçalho
+    // Controla o Display do Cabeçalho / Display or Hide Header
     window.addEventListener('scroll', function() {
-        const posicaoAtual = window.scrollY;
+        const currentPosition = window.scrollY;
 
-        if (posicaoAtual < alturaHero) {
-            ocultaElementosHeader();
+        if (currentPosition < heroHeight) {
+            hideHeader();
         } else {
-            exibeElementosHeader();
+            showHeader();
         }
     })
 
-    // Troca de Abas - Seção Atrações
+    // Troca de Abas - Seção Atrações / Change Tabs - "Shows" Section
     for (let i= 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function(button) {
             const targetTab = button.target.dataset.tabButton;
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     }
 
-    // Abrir e Fechar Perguntas do FAQ
+    // Abrir e Fechar Perguntas do FAQ / Open or Close FAQ Questions
     for (let i = 0; i < questions.length;i ++) {
         questions[i].addEventListener('click', openOrCloseAnswer);
     }
@@ -43,12 +43,12 @@ function activeButton() {
     }
 }
 
-function ocultaElementosHeader() {
+function hideHeader() {
     const header = document.querySelector('header');
     header.classList.add('header--is-hidden');
 }
 
-function exibeElementosHeader() {
+function showHeader() {
     const header = document.querySelector('header');
     header.classList.remove('header--is-hidden');
 }
@@ -62,8 +62,8 @@ function hideAllTabs() {
 }
 
 function openOrCloseAnswer(element) {
-    const classe = 'faq__questions__item--is-open';
+    const className = 'faq__questions__item--is-open';
     const elementParent = element.target.parentNode;
 
-    elementParent.classList.toggle(classe);
+    elementParent.classList.toggle(className);
 }
