@@ -1,7 +1,7 @@
 <h1>Disney+ Website Clone (2022 Version)</h1>
 <p>
   🔗 Procurando pela <strong>Versão Em Português</strong> do README?
-  <a href="./README.pt-br.html">README PT-BR</a>
+  <a href="./README.pt-br.md">README PT-BR</a>
 </p>
 <p>
   This project is a clone of the old Disney+ website layout (2022 version), developed for study and learning purposes.<br />
